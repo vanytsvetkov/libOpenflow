@@ -161,7 +161,7 @@ func (p *IGMPv3Query) MarshalBinary() (data []byte, err error) {
 	n += 1
 	binary.BigEndian.PutUint16(data[n:], p.Checksum)
 	n += 2
-	copy(data[n:n+4], p.GroupAddress[12:16])
+	copy(data[n:n+4], p.GroupAddress.To4())
 	n += 4
 	sBit := uint8(0x0)
 	if p.SuppressRouterProcessing {
