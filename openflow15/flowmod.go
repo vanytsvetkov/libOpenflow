@@ -43,10 +43,9 @@ func NewFlowMod() *FlowMod {
 	f.TableId = 0
 	f.Command = FC_ADD
 
-	f.IdleTimeout = 0
-	f.HardTimeout = 0
-	// Add a priority gen here
-	f.Priority = 1000
+	f.IdleTimeout = OFP_FLOW_PERMANENT
+	f.HardTimeout = OFP_FLOW_PERMANENT
+	f.Priority = OFP_DEFAULT_PRIORITY
 	f.BufferId = 0xffffffff
 	f.OutPort = P_ANY
 	f.OutGroup = OFPG_ANY
@@ -183,6 +182,11 @@ const (
 	FC_MODIFY_STRICT
 	FC_DELETE
 	FC_DELETE_STRICT
+)
+
+const (
+	OFP_FLOW_PERMANENT   = 0      /* Value used in "idle_timeout" and "hard_timeout" to indicate that the entry is permanent. */
+	OFP_DEFAULT_PRIORITY = 0x8000 /* By default, choose a priority in the middle. */
 )
 
 // ofp_flow_mod_flags 1.5
