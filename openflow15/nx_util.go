@@ -222,6 +222,14 @@ var oxxFieldHeaderMap = map[string]*MatchField{
 	"OXM_OF_PBB_ISID":       newMatchFieldHeader(OXM_CLASS_OPENFLOW_BASIC, OXM_FIELD_PBB_ISID, 3),
 	"OXM_OF_TUNNEL_ID":      newMatchFieldHeader(OXM_CLASS_OPENFLOW_BASIC, OXM_FIELD_TUNNEL_ID, 8),
 	"OXM_OF_IPV6_EXTHDR":    newMatchFieldHeader(OXM_CLASS_OPENFLOW_BASIC, OXM_FIELD_IPV6_EXTHDR, 2),
+	"OXM_PACKET_REG0":       newMatchFieldHeader(OXM_CLASS_PACKET_REGS, OXM_PACKET_REG0, 8),
+	"OXM_PACKET_REG1":       newMatchFieldHeader(OXM_CLASS_PACKET_REGS, OXM_PACKET_REG1, 8),
+	"OXM_PACKET_REG2":       newMatchFieldHeader(OXM_CLASS_PACKET_REGS, OXM_PACKET_REG2, 8),
+	"OXM_PACKET_REG3":       newMatchFieldHeader(OXM_CLASS_PACKET_REGS, OXM_PACKET_REG3, 8),
+	"OXM_PACKET_REG4":       newMatchFieldHeader(OXM_CLASS_PACKET_REGS, OXM_PACKET_REG4, 8),
+	"OXM_PACKET_REG5":       newMatchFieldHeader(OXM_CLASS_PACKET_REGS, OXM_PACKET_REG5, 8),
+	"OXM_PACKET_REG6":       newMatchFieldHeader(OXM_CLASS_PACKET_REGS, OXM_PACKET_REG6, 8),
+	"OXM_PACKET_REG7":       newMatchFieldHeader(OXM_CLASS_PACKET_REGS, OXM_PACKET_REG7, 8),
 }
 
 // FindFieldHeaderByName finds OXM/NXM field by name and mask.
