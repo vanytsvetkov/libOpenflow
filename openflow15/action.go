@@ -160,7 +160,12 @@ func NewActionOutput(portNum uint32) *ActionOutput {
 	act.Type = ActionType_Output
 	act.Length = act.Len()
 	act.Port = portNum
-	act.MaxLen = OFPCML_NO_BUFFER
+	switch portNum {
+	case P_CONTROLLER:
+		act.MaxLen = OFPCML_NO_BUFFER
+	default:
+		act.MaxLen = 0
+	}
 	act.pad = make([]byte, 6)
 	return act
 }
